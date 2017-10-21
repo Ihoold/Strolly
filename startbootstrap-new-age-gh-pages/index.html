@@ -185,28 +185,19 @@
       <div class="overlay"></div>
     </section>
 
-    <section class="contact bg-primary" id="contact">
+    <section class="contact bg-primary" id="signup">
       <div class="container">
-        <h2>We
-          <i class="fa fa-heart"></i>
-          new friends!</h2>
-        <ul class="list-inline list-social">
-          <li class="list-inline-item social-twitter">
-            <a href="#">
-              <i class="fa fa-twitter"></i>
-            </a>
-          </li>
-          <li class="list-inline-item social-facebook">
-            <a href="#">
-              <i class="fa fa-facebook"></i>
-            </a>
-          </li>
-          <li class="list-inline-item social-google-plus">
-            <a href="#">
-              <i class="fa fa-google-plus"></i>
-            </a>
-          </li>
-        </ul>
+        <h2>Want to stay in touch?</h2>
+
+      <form action="/signup" method="POST">
+          <div class="form-group row">
+            <div class="col-sm-12">
+              <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+            </div>
+          </div>
+
+          <button type="button" class="btn btn-success" id="signupButton">Sign in for newsletter</button>
+        </form>
       </div>
     </section>
 
@@ -235,7 +226,7 @@
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for this template -->
-    <script src="js/new-age.min.js"></script>
+    <script src="js/new-age.js"></script>
 
   </body>
 

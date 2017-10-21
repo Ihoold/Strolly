@@ -34,6 +34,14 @@
       $("#mainNav").removeClass("navbar-shrink");
     }
   };
+
+  // Signup button submit
+  var signupSend = function() {
+    var data = $("#inputEmail").val();
+    $.ajax("/email.php", method="POST", data=data);
+  };
+
+  $("#signupButton").click(signupSend);
   // Collapse now if page is not at top
   navbarCollapse();
   // Collapse the navbar when page is scrolled
