@@ -6,7 +6,7 @@
     if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
       var target = $(this.hash);
       target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-      if (target.length) {
+      if (targt.length) {
         $('html, body').animate({
           scrollTop: (target.offset().top - 48)
         }, 1000, "easeInOutExpo");
@@ -35,10 +35,20 @@
     }
   };
 
+
+  function validateEmail(email) {
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+  }
+    
   // Signup button submit
   var signupSend = function() {
-    var data = $("#inputEmail").val();
-    $.ajax("/email.php", {method: "POST", data: {email: data}, success: () => alert("You have signed up successfully")});
+      var data = $("#inputEmail").val();
+      if(validateEmail(data)) {
+	  $.ajax("/email.php", {method: "POST", data: {email: data}, success: () => alert("You have signed up successfully")});
+      } else {
+	  alert("Wrong email adress inserted");
+      }
   };
 
   $("#signupButton").click(signupSend);
