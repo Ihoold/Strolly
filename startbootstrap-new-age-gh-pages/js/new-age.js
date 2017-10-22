@@ -38,7 +38,7 @@
   // Signup button submit
   var signupSend = function() {
     var data = $("#inputEmail").val();
-    $.ajax("/email.php", {method: "POST", data: {email: data}});
+    $.ajax("/email.php", {method: "POST", data: {email: data}, success: () => alert("You have signed up successfully")});
   };
 
   $("#signupButton").click(signupSend);
