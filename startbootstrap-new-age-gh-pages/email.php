@@ -1,6 +1,6 @@
 <?php
-$fp = fopen('mails.txt', 'w');
-$body = file_get_contents('php://input');
-fwrite($fp, $body);
+$fp = fopen(dirname(__FILE__).'/mails.txt', 'a');
+$email = $_POST['email'];
+fwrite($fp, $email."\n");
 fclose($fp);
 ?>
